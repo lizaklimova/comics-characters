@@ -40,19 +40,19 @@
         width: 100%;
         height: 350px;
         margin-bottom: 26px;
-        transition: all $slider-transition;
+        // transition: all $slider-transition;
 
-        &.fetched {
-          display: none;
-          transform: translateY(100%);
-          opacity: 0;
-        }
+        // &.fetched {
+        //   display: none;
+        //   transform: translateY(100%);
+        //   opacity: 0;
+        // }
 
-        &.active {
-          transform: translateY(0);
-          opacity: 1;
-          filter: drop-shadow(0 15px 40px $accent-purple);
-        }
+        // &.active {
+        //   transform: translateY(0);
+        //   opacity: 1;
+        //   filter: drop-shadow(0 15px 40px $accent-purple);
+        // }
 
         @media screen and (min-width: 768px) {
           min-height: 715px;
