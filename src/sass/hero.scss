@@ -83,6 +83,8 @@
   }
 
   .slider_wrap {
+    display: flex;
+    flex-direction: column;
     @media screen and (min-width: 768px) {
       display: flex;
       flex-direction: column;
@@ -154,7 +156,7 @@
       }
 
       .right_part {
-        align-self: flex-end;
+        // align-self: flex-end;
 
         .relative_wrap {
           position: relative;

@@ -2,19 +2,19 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://lizaklimova.github.io/comics",
+  "homepage": "https://lizaklimova.github.io/comics-characters",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /comics/"
+    "build": "parcel build src/*.html --public-url /comics-characters/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/lizaklimova/comics-characters.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/lizaklimova/comics-characters/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
