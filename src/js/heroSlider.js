@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     decorCircle.className = 'decor_circle';
     redirectBtn.className = 'characters_redirect_btn';
     decorArrow.className.baseVal = 'decor_arrow';
-    decorArrow.className.animVal = 'decor_arrow';
+    console.log(decorArrow.className);
 
     switch (btnIndex) {
       case 0:
