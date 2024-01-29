@@ -1,0 +1,115 @@
+.random_characters_section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
+
+  .random_wrap {
+    .random_title {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.56px;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 44px;
+        line-height: 1;
+        letter-spacing: -0.88px;
+        margin-bottom: 58px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 64px;
+      }
+    }
+
+    .info_wrap {
+      @media screen and (min-width: 1440px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .character_image {
+        width: 100%;
+        min-height: 350px;
+        margin-bottom: 26px;
+
+        @media screen and (min-width: 768px) {
+          min-height: 715px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          flex: 1;
+          max-width: 500px;
+          max-height: 100%;
+          margin-bottom: 0;
+        }
+      }
+
+      .text_list {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+
+        @media screen and (min-width: 1440px) {
+          flex: 2;
+        }
+
+        .text_block_item {
+          position: relative;
+          width: 100%;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -32px;
+            width: 100%;
+            height: 1px;
+            @include whiteBgWithOpacity(0.2);
+          }
+
+          .chatacter_name {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.33;
+            letter-spacing: -0.36px;
+            margin-bottom: 14px;
+          }
+        }
+      }
+    }
+
+    .characters_redirect_btn {
+      font-weight: 500;
+      line-height: 1.29;
+      text-transform: uppercase;
+      display: block;
+      @include whiteBorderOpacity(1px, 0.3);
+      border-radius: 1000px;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $text-color;
+      margin: 0 auto;
+      margin-top: 90px;
+      transition: color $transition, border-color $transition;
+
+      &:hover,
+      &:focus {
+        color: $logo-red;
+        border-color: $logo-red;
+      }
+
+      @media screen and (min-width: 1440px) {
+        padding: 12px 24px;
+      }
+    }
+  }
+}

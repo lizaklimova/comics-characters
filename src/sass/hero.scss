@@ -2,7 +2,17 @@
   padding-top: 50px;
   padding-bottom: 80px;
 
+  .hero_wrap {
+    @media screen and (min-width: 1440px) {
+      display: flex;
+      gap: 130px;
+    }
+  }
+
   .main_text_wrap {
+    @media screen and (min-width: 1440px) {
+      align-self: center;
+    }
     .first_line {
       @include whiteWithOpacity(0.7);
       line-height: 1.29;
@@ -83,18 +93,19 @@
   }
 
   .slider_wrap {
-    display: flex;
-    flex-direction: column;
     @media screen and (min-width: 768px) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    @media screen and (min-width: 1440px) {
+      flex-direction: row-reverse;
+    }
+
     .slider_items_wrap {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       row-gap: 30px;
 
       @media screen and (min-width: 768px) {
@@ -103,10 +114,10 @@
       }
 
       .left_part {
-        align-self: flex-end;
         width: 190px;
         height: 256px;
-        transition: background-color $transition, background-image $transition;
+        transition: background-color $slider-transition,
+          background-image $slider-transition;
 
         &.spiderman {
           @include leftSliderPartBg(
@@ -150,13 +161,14 @@
         }
 
         @media screen and (min-width: 768px) {
+          align-self: flex-end;
           width: 336px;
           height: 540px;
         }
       }
 
       .right_part {
-        // align-self: flex-end;
+        align-self: flex-end;
 
         .relative_wrap {
           position: relative;
@@ -165,7 +177,8 @@
             width: 190px;
             height: 256px;
             background-color: $contrast-black;
-            transition: background-image $transition, box-shadow $transition;
+            transition: background-image $slider-transition,
+              box-shadow $slider-transition;
 
             &.spiderman {
               @include rightSliderPartBg(
@@ -212,6 +225,10 @@
             @media screen and (min-width: 768px) {
               width: 336px;
               height: 540px;
+            }
+
+            @media screen and (min-width: 1440px) {
+              margin-top: -200%;
             }
           }
 
@@ -286,74 +303,91 @@
             @media screen and (min-width: 768px) {
               display: block;
               position: absolute;
-              bottom: 16px;
-              right: 16px;
+              bottom: 0;
+              right: 0;
+              width: 70px;
+              height: 70px;
             }
           }
         }
 
-        .decor_line {
-          position: relative;
-          display: inline-block;
-          width: 100%;
-          height: 1px;
-          background-color: $text-color;
-          opacity: 0.15;
-
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            top: -4.5px;
-            width: 0;
-            height: 0;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-            transform: scaleX(-1);
+        .decor_line_wrap {
+          @media screen and (min-width: 1440px) {
+            position: relative;
           }
 
-          &::before {
-            left: 95%;
-            border-left: 10px solid $text-color;
+          .decor_line {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: $text-color;
+            opacity: 0.15;
 
-            @media screen and (min-width: 768px) {
-              left: 100%;
+            @media screen and (min-width: 1440px) {
+              top: 32px;
+            }
+
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              top: -4.5px;
+              width: 0;
+              height: 0;
+              border-top: 5px solid transparent;
+              border-bottom: 5px solid transparent;
+              transform: scaleX(-1);
+            }
+
+            &::before {
+              left: 95%;
+              border-left: 10px solid $text-color;
+
+              @media screen and (min-width: 768px) {
+                left: 97%;
+              }
+            }
+
+            &::after {
+              right: 95%;
+              border-right: 10px solid $text-color;
+
+              @media screen and (min-width: 768px) {
+                right: 97%;
+              }
             }
           }
 
-          &::after {
-            right: 95%;
-            border-right: 10px solid $text-color;
+          .descr_wrap {
+            display: flex;
+            column-gap: 14px;
+            max-width: 190px;
+            margin-top: 30px;
+
+            .descr_title {
+              font-size: 12px;
+              line-height: 1.17;
+              letter-spacing: -0.24px;
+            }
+
+            .descr_paragraph {
+              font-size: 12px;
+              line-height: 1.17;
+              letter-spacing: -0.24px;
+              @include whiteWithOpacity(0.7);
+            }
 
             @media screen and (min-width: 768px) {
-              right: 100%;
+              max-width: 336px;
+              column-gap: 55px;
+              margin-top: 16px;
             }
-          }
-        }
 
-        .descr_wrap {
-          display: flex;
-          column-gap: 14px;
-          max-width: 190px;
-          margin-top: 30px;
-
-          .descr_title {
-            font-size: 12px;
-            line-height: 1.17;
-            letter-spacing: -0.24px;
-          }
-
-          .descr_paragraph {
-            font-size: 12px;
-            line-height: 1.17;
-            letter-spacing: -0.24px;
-            @include whiteWithOpacity(0.7);
-          }
-
-          @media screen and (min-width: 768px) {
-            max-width: 336px;
-            column-gap: 55px;
-            margin-top: 16px;
+            @media screen and (min-width: 1440px) {
+              position: absolute;
+              top: 48px;
+            }
           }
         }
       }
@@ -389,6 +423,10 @@
       @media screen and (min-width: 768px) {
         width: 100px;
         margin-top: 32px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        transform: rotate(90deg);
       }
     }
   }
