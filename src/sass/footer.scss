@@ -12,6 +12,7 @@
     line-height: 1.2;
     letter-spacing: 0.2px;
     @include whiteWithOpacity(0.4);
+    background-color: $accent-purple;
     margin-top: 40px;
 
     @media screen and (min-width: 768px) {
@@ -20,18 +21,6 @@
       letter-spacing: 0.28px;
       margin-top: 67px;
     }
-  }
-
-  &.spiderman::after {
-    background-color: $accent-red;
-  }
-
-  &.hulk::after {
-    background-color: $accent-red;
-  }
-
-  &.panther::after {
-    background-color: $accent-purple;
   }
 
   .footer_wrap {
