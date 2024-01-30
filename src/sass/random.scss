@@ -1,17 +1,3 @@
-@keyframes randomSliding {
-  0% {
-    transform: scale(0.4);
-  }
-
-  60% {
-    transform: scale(0.7);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .random_characters_section {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -54,26 +40,38 @@
         width: 100%;
         height: 350px;
         margin-bottom: 26px;
-        filter: drop-shadow(0 15px 40px $accent-purple);
-        animation-name: randomSliding;
-        // animation-duration: 1000ms;
-        // animation-timing-function: ease-in;
-        // animation-iteration-count: infinite;
+        // filter: drop-shadow(0 15px 40px $accent-purple);
 
-        &.active {
-          animation-name: randomSliding;
-          animation-duration: 500ms;
-          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        &.spiderman {
+          filter: drop-shadow(0 15px 40px $accent-red);
+        }
+
+        &.hulk {
+          filter: drop-shadow(0 15px 40px $accent-green);
+        }
+
+        &.panther {
+          filter: drop-shadow(0 15px 40px $accent-purple);
+        }
+
+        transition: transform $slider-transition;
+
+        &.fetched {
+          transform: scale(0.9);
+          &.active {
+            transform: scale(1);
+          }
         }
 
         @media screen and (min-width: 768px) {
+          object-fit: cover;
           min-height: 715px;
         }
 
         @media screen and (min-width: 1440px) {
           flex: 1;
           max-width: 500px;
-          max-height: 100%;
+          min-height: 650px;
           margin-bottom: 0;
         }
       }

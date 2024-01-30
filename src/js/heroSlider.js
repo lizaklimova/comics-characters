@@ -4,6 +4,7 @@ const buttonsContainer = document.querySelector('.slider_btns_list');
 const redirectBtn = document.querySelector('.characters_redirect_btn');
 const decorCircle = document.querySelector('.decor_circle');
 const decorArrow = document.querySelector('.decor_arrow');
+const randomImg = document.querySelector('.character_image');
 const buttonsArr = Array.from(buttonsContainer.querySelectorAll('.slider_btn'));
 
 const changeSlideAutomatically = () => {
@@ -14,9 +15,13 @@ const changeSlideAutomatically = () => {
   buttonsArr[activeIndex].click();
 };
 
-// const intervalId = setInterval(changeSlideAutomatically, 3000);
+const heroIntervalId = setInterval(changeSlideAutomatically, 3500);
 
 buttonsContainer.addEventListener('click', event => {
+  if (event.isTrusted) {
+    clearInterval(heroIntervalId);
+  }
+
   buttonsArr.forEach(btn => {
     btn.classList.remove('active', 'panther', 'hulk', 'spiderman');
   });
@@ -36,6 +41,7 @@ buttonsContainer.addEventListener('click', event => {
       decorCircle.classList.add('panther');
       decorArrow.classList.add('panther');
       redirectBtn.classList.add('panther');
+      randomImg.classList.add('panther');
       buttonsArr[0].classList.add('slider_btn', 'active', 'panther');
 
       decorCircle.innerHTML = 'Black panther';
@@ -46,6 +52,7 @@ buttonsContainer.addEventListener('click', event => {
       decorCircle.classList.add('hulk');
       decorArrow.classList.add('hulk');
       redirectBtn.classList.add('hulk');
+      randomImg.classList.add('hulk');
       buttonsArr[1].classList.add('slider_btn', 'active', 'hulk');
 
       decorCircle.innerHTML = 'Hulk';
@@ -56,6 +63,7 @@ buttonsContainer.addEventListener('click', event => {
       decorCircle.classList.add('spiderman');
       decorArrow.classList.add('spiderman');
       redirectBtn.classList.add('spiderman');
+      randomImg.classList.add('spiderman');
       buttonsArr[2].classList.add('slider_btn', 'active', 'spiderman');
 
       decorCircle.innerHTML = 'Spider <br/> Man';
@@ -66,6 +74,7 @@ buttonsContainer.addEventListener('click', event => {
       decorCircle.classList.add('panther');
       decorArrow.classList.add('panther');
       redirectBtn.classList.add('panther');
+      randomImg.classList.add('panther');
       buttonsArr[0].classList.add('active', 'panther');
 
       decorCircle.innerHTML = 'Black panther';
