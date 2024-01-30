@@ -40,20 +40,8 @@
         width: 100%;
         height: 350px;
         margin-bottom: 26px;
-        // filter: drop-shadow(0 15px 40px $accent-purple);
-
-        &.spiderman {
-          filter: drop-shadow(0 15px 40px $accent-red);
-        }
-
-        &.hulk {
-          filter: drop-shadow(0 15px 40px $accent-green);
-        }
-
-        &.panther {
-          filter: drop-shadow(0 15px 40px $accent-purple);
-        }
-
+        cursor: pointer;
+        filter: drop-shadow(0 15px 40px $accent-purple);
         transition: transform $slider-transition;
 
         &.fetched {
@@ -128,11 +116,14 @@
       }
     }
 
-    .characters_redirect_btn {
+    .characters_redirect_link {
       font-weight: 500;
       line-height: 1.29;
       text-transform: uppercase;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 170px;
       @include whiteBorderOpacity(1px, 0.3);
       border-radius: 1000px;
       padding: 10px 20px;

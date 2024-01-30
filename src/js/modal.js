@@ -1,0 +1,28 @@
+const backdrop = document.querySelector('.backdrop[data-backdrop]');
+const modal = document.querySelector('.modal_window[data-modal]');
+const closeBtn = document.querySelector('.close_btn[data-modal-close]');
+const randomCharacterImg = document.querySelector('[data-modal-open]');
+
+const closeModal = () => {
+  backdrop.classList.remove('is-shown');
+  backdrop.classList.add('is-hidden');
+};
+
+const openModal = () => {
+  backdrop.classList.remove('is-hidden');
+  backdrop.classList.add('is-shown');
+};
+
+window.addEventListener('keydown', e => {
+  if (e.code === 'Escape') {
+    closeModal();
+  }
+});
+
+randomCharacterImg.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+backdrop.addEventListener('click', e => {
+  if (e.target === e.currentTarget) {
+    closeModal();
+  }
+});
