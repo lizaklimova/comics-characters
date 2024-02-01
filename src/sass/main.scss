@@ -1,34 +1,13 @@
 @import './vars';
 @import './reset';
-@import './header';
-@import './hero';
-@import './random';
-@import './footer';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.container {
-  max-width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 375px) {
-  .container {
-    max-width: 365px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 734px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1406px;
-  }
-}
+@import './base';
+@import './mixins';
+@import './common/header';
+@import './home/hero';
+@import './home/random';
+@import './characters/hero';
+@import './characters/search';
+@import './common/footer';
+@import './common/modal';
+@import './common/characters-modal';
+@import './common/comics-modal';

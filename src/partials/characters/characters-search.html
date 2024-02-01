@@ -1,0 +1,51 @@
+<section class="search_section">
+  <div class="container search_wrap">
+    <form class="search_form">
+      <div class="relative_div">
+        <label for="comic-name">Comics</label>
+        <input
+          id="comic-name"
+          name="comic-name"
+          type="text"
+          placeholder="Enter text"
+        />
+        <button type="submit" class="search_button">
+          <svg width="16" height="16" class="search_icon">
+            <use href="./images/icons/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="relative_div">
+        <label for="name-starts-with">Name starts with</label>
+        <input
+          id="name-starts-with"
+          name="starts-with"
+          type="text"
+          placeholder="Enter text"
+        />
+        <button type="submit" class="search_button">
+          <svg width="16" height="16" class="search_icon">
+            <use href="./images/icons/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="filter_wrap">
+        <div class="select_wrap">
+          <label for="order">Ordered by</label>
+
+          <select id="order">
+            <option selected value="name">Name</option>
+            <option value="modified">Modified</option>
+          </select>
+        </div>
+
+        <div class="date_filter_wrap">
+          <label for="date">Date</label>
+          <input id="date" name="data" type="date" min="2010-01-01" />
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

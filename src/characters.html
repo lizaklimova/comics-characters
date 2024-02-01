@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
-    <include src="./partials/header.html"></include>
-    <main></main>
-    <include src="./partials/footer.html"></include>
-
-    <script type="module" src="./index.js"></script>
+    <include src="./partials/common/header.html"></include>
+    <main>
+      <include src="./partials/characters/hero.html"></include>
+      <include src="./partials/characters/characters-search.html"></include>
+    </main>
+    <include src="./partials/common/footer.html"></include>
+    <script type="module" src="./js/characters/characters.js"></script>
   </body>
 </html>
