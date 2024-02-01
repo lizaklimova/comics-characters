@@ -1,0 +1,162 @@
+.modal_positioning_wrap {
+  @media screen and(min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .images_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    @media screen and(min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @media screen and(min-width: 1440px) {
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .main_image {
+      width: 100%;
+      min-height: 385px;
+      border-radius: 8px;
+      object-fit: cover;
+
+      @media screen and(min-width: 768px) {
+        width: 332px;
+        min-height: 445px;
+      }
+    }
+
+    .additional_images_wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @media screen and(min-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: unset;
+      }
+
+      @media screen and(min-width: 1440px) {
+        flex-direction: row;
+      }
+
+      .small_image {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .comics_container {
+    flex: 2;
+    border-radius: 8px;
+    padding: 32px 16px;
+    background-color: $contrast-black;
+
+    *.title {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.33;
+      letter-spacing: -0.36px;
+
+      @media screen and(min-width: 768px) {
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+    }
+
+    .info_wrap {
+      margin-bottom: 32px;
+
+      @media screen and(min-width: 1440px) {
+        margin-bottom: 64px;
+      }
+
+      .title_wrap {
+        @media screen and(min-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+        }
+
+        .date {
+          line-height: 1.29;
+          margin-bottom: 16px;
+          @include whiteWithOpacity(0.5);
+        }
+      }
+      .description {
+        line-height: 1.29;
+
+        @media screen and(min-width: 768px) {
+          font-size: 16px;
+          line-height: 1.125;
+        }
+      }
+    }
+
+    .comics_list_wrap {
+      .title {
+        margin-bottom: 16px;
+      }
+
+      .comics_list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media screen and(min-width: 768px) {
+          flex-direction: row;
+          gap: 19px;
+        }
+
+        .comics_item {
+          .comics_cover {
+            width: 100%;
+            height: 263px;
+            border-radius: 15px;
+            margin-bottom: 16px;
+            object-fit: cover;
+
+            @media screen and(min-width: 768px) {
+              width: 155px;
+              height: 200px;
+            }
+
+            @media screen and(min-width: 1440px) {
+              width: 174px;
+            }
+          }
+
+          .comics_character {
+            font-weight: 500;
+            line-height: 1.29;
+            letter-spacing: -0.28px;
+          }
+
+          .comics_author {
+            font-size: 12px;
+            line-height: 1.17;
+            @include whiteWithOpacity(0.5);
+          }
+        }
+      }
+    }
+  }
+}

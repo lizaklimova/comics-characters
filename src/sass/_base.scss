@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a {
+  color: currentColor;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 365px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 734px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1406px;
+  }
+}

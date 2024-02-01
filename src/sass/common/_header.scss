@@ -1,0 +1,96 @@
+.header {
+  position: -webkit-sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: transparent;
+  z-index: 2;
+
+  &.solid_header {
+    background-color: $bg-color;
+  }
+
+  .logo_link svg {
+    width: 98px;
+    height: 15px;
+
+    @media screen and (min-width: 768px) {
+      width: 202px;
+      height: 31px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search_form {
+      position: relative;
+      width: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & :is(input:focus, input:valid) ~ div > .label {
+        display: none;
+      }
+
+      & :is(input:focus, input:valid) ~ .button_label_wrap {
+        left: 18.5px;
+      }
+      .button_label_wrap {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        .search_button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          background-color: transparent;
+
+          .search_icon {
+            stroke: $text-color;
+            fill: transparent;
+            transition: stroke $transition;
+          }
+        }
+
+        .label {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1.17;
+          text-transform: uppercase;
+          cursor: text;
+        }
+      }
+
+      .input {
+        font-size: 12px;
+        line-height: 1.17;
+        width: 100%;
+        border-radius: 1000px;
+        @include whiteBorderOpacity(1px, 0.3);
+        padding: 6px 18px 6px 40px;
+        background-color: transparent;
+        color: $text-color;
+        transition: outline $transition, border-color $transition;
+
+        &:focus {
+          outline: none;
+          border-color: $logo-red;
+        }
+
+        &:focus + .button_label_wrap svg {
+          stroke: $logo-red;
+        }
+      }
+    }
+  }
+}

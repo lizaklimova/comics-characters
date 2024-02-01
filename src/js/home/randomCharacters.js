@@ -1,6 +1,6 @@
-import { getRandomFiveCharacters } from './service/marvelApi';
-import { DEFAULT_DESCRIPTION } from '../constants';
-import { determineImageAvailability } from './helpers';
+import { getRandomFiveCharacters } from '../service/marvelApi';
+import { DEFAULT_DESCRIPTION } from '../../constants';
+import { determineImageAvailability } from '../helpers';
 
 const randomImg = document.querySelector('.character_image');
 const randomNames = document.querySelectorAll('.character_name');
@@ -44,7 +44,6 @@ const fetchRandomCharacters = async () => {
         });
 
         randomImg.classList.remove('active');
-
         randomImg.src = determineImageAvailability(thumbnail);
         randomTextItems[i].classList.add('active');
         randomImg.classList.add('fetched');

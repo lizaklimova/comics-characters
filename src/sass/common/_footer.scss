@@ -1,6 +1,10 @@
 .footer {
   padding-top: 40px;
 
+  @media screen and (min-width: 768px) {
+    padding-top: 67px;
+  }
+
   &::after {
     display: flex;
     justify-content: center;
@@ -27,6 +31,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px 158px;
+
+    @media screen and (min-width: 768px) {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 1440px) {
+      justify-content: space-between;
+    }
 
     .footer_logo {
       @media screen and (min-width: 768px) {
@@ -56,6 +70,10 @@
       align-items: center;
       gap: 14px;
 
+      @media screen and (min-width: 768px) {
+        gap: 16px;
+      }
+
       .socials_item a {
         display: flex;
         justify-content: center;
@@ -65,6 +83,11 @@
         @include whiteBorderOpacity(1px, 0.15);
         border-radius: 6px;
         transition: border-color $transition;
+
+        @media screen and (min-width: 768px) {
+          width: 40px;
+          height: 40px;
+        }
 
         &:hover,
         &:focus {
@@ -102,26 +125,7 @@
             height: 18px;
           }
         }
-
-        @media screen and (min-width: 768px) {
-          width: 40px;
-          height: 40px;
-        }
-      }
-
-      @media screen and (min-width: 768px) {
-        gap: 16px;
       }
     }
-
-    @media screen and (min-width: 768px) {
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    padding-top: 67px;
   }
 }

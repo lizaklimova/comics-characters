@@ -1,0 +1,84 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  overflow-y: scroll;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+
+  @media screen and(min-width: 1440px) {
+    overflow-y: unset;
+  }
+
+  &.is-shown {
+    display: block;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  .modal_window {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    max-width: 100%;
+    min-height: 100%;
+    border-radius: 8px;
+    padding: 40px 20px;
+    transform: translateX(50%);
+    z-index: 3;
+    background-color: $bg-color;
+    color: $text-color;
+    cursor: default;
+
+    @media screen and(min-width: 768px) {
+      min-width: 600px;
+      padding: 64px 32px;
+    }
+
+    @media screen and(min-width: 1440px) {
+      min-width: 1000px;
+      min-height: 660px;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
+
+    &.is-shown {
+      display: block;
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+
+    .close_btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background-color: transparent;
+
+      @media screen and(min-width: 768px) {
+        top: 16px;
+        right: 16px;
+        width: 28px;
+        height: 28px;
+      }
+
+      &:hover .close_icon,
+      &:focus .close_icon {
+        stroke: $accent-red;
+      }
+
+      .close_icon {
+        stroke: $text-color;
+        transition: stroke $transition;
+      }
+    }
+  }
+}
