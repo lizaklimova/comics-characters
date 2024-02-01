@@ -1,3 +1,8 @@
+import {
+  getRandomCharacter,
+  getRandomCharacterComics,
+} from './service/marvelApi';
+
 const backdrop = document.querySelector('.backdrop[data-backdrop]');
 const modal = document.querySelector('.modal_window[data-modal]');
 const closeBtn = document.querySelector('.close_btn[data-modal-close]');
@@ -19,7 +24,11 @@ window.addEventListener('keydown', e => {
   }
 });
 
-randomCharacterImg.addEventListener('click', openModal);
+randomCharacterImg.addEventListener('click', async e => {
+  await getRandomCharacterComics(e.target.dataset.id);
+  openModal();
+  await getRandomCharacter(e.target.dataset.id);
+});
 closeBtn.addEventListener('click', closeModal);
 backdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {

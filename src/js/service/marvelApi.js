@@ -45,3 +45,29 @@ export const getRandomFiveCharacters = async () => {
     console.log(message);
   }
 };
+
+export const getRandomCharacter = async characterId => {
+  try {
+    const {
+      data: { data },
+    } = await axios.get(`characters/${characterId}`);
+
+    console.log(data);
+    return data.results;
+  } catch ({ message }) {
+    console.log(message);
+  }
+};
+
+export const getRandomCharacterComics = async characterId => {
+  try {
+    const {
+      data: { data },
+    } = await axios.get(`characters/${characterId}/comics`);
+
+    console.log(data);
+    return data.results;
+  } catch ({ message }) {
+    console.log(message);
+  }
+};

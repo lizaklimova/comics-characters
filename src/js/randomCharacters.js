@@ -26,11 +26,12 @@ const fetchRandomCharacters = async () => {
     const currentImage = determineImageAvailability(res[0].thumbnail);
     randomImg.src = currentImage;
 
-    res.forEach(({ name, description, thumbnail }, i) => {
+    res.forEach(({ id, name, description, thumbnail }, i) => {
       const characterDescr = description ? description : DEFAULT_DESCRIPTION;
 
       randomInfos[i].innerHTML = characterDescr;
       randomNames[i].innerHTML = name;
+      randomImg.dataset.id = id;
       randomImg.className = 'character_image';
 
       randomTextItems[i].addEventListener('click', event => {
