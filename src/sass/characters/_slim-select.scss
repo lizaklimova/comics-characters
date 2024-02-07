@@ -1,0 +1,24 @@
+.ss-content {
+  border-radius: 16px;
+  border: 1px solid $contrast-black !important;
+
+  &.ss-open-below {
+    border-radius: 16px;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+    border: 5px solid $contrast-black !important;
+  }
+  .ss-list {
+    padding: 5px;
+    background-color: $contrast-black !important;
+    .ss-option:not(.ss-disabled) {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.ss-main {
+  .ss-arrow {
+    display: none !important;
+  }
+}

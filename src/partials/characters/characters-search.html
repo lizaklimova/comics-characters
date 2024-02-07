@@ -35,15 +35,26 @@
         <div class="select_wrap">
           <label for="order">Ordered by</label>
 
-          <select id="order">
-            <option selected value="name">Name</option>
+          <select class="select_order" id="order">
+            <option value="name">Name</option>
             <option value="modified">Modified</option>
           </select>
+
+          <button type="button" class="select_show_btn">
+            <svg width="18" height="18" class="select_icon">
+              <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+            </svg>
+          </button>
         </div>
 
         <div class="date_filter_wrap">
           <label for="date">Date</label>
-          <input id="date" name="data" type="date" />
+          <input id="date" class="date_input" name="data" type="date" />
+          <button type="button" class="calendar_show_btn">
+            <svg width="18" height="18" class="select_icon">
+              <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </form>
