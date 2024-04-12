@@ -57,4 +57,5 @@ const fetchRandomCharacters = async () => {
     console.log(message);
   }
 };
+
 fetchRandomCharacters();
